@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CafeDbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Admin">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="kullaniciAdi" Type="varchar" MaxLength="50" />
+    <Property Name="Sifre" Type="varchar" MaxLength="50" />
+    <Property Name="role" Type="tinyint" />
+  </EntityType>
+  <EntityType Name="Hakkimizda">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UstBaslik" Type="varchar" MaxLength="100" />
+    <Property Name="Baslik" Type="varchar" MaxLength="100" />
+    <Property Name="aboutImage" Type="varchar" MaxLength="50" />
+    <Property Name="Aciklama" Type="text" />
+  </EntityType>
+  <EntityType Name="Urunler">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UstBaslik" Type="nvarchar" MaxLength="50" />
+    <Property Name="Baslik" Type="nvarchar" MaxLength="50" />
+    <Property Name="urunImage" Type="nvarchar" MaxLength="50" />
+    <Property Name="Aciklama" Type="text" />
+    <Property Name="Aktiflik" Type="bit" />
+    <Property Name="Sira" Type="int" />
+  </EntityType>
+  <EntityContainer Name="CafeDbModelStoreContainer">
+    <EntitySet Name="Admin" EntityType="Self.Admin" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Hakkimizda" EntityType="Self.Hakkimizda" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Urunler" EntityType="Self.Urunler" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

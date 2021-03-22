@@ -1,0 +1,36 @@
+﻿@model List<CafeWeb.Models.Urunler>
+@using CafeWeb.Controllers
+@{
+    ViewBag.Title = "Products";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@{ var tek = true;}
+@foreach (var item in Model)
+{
+
+
+<section class="page-section">
+    <div class="container">
+        <div class="product-item">
+            <div class="product-item-title d-flex">
+                <div class="bg-faded p-5 d-flex @(tek?" ml-auto":" mr-auto") rounded">
+                    <h2 class="section-heading mb-0">
+                        <span class="section-heading-upper">@item.UstBaslik</span>
+                        <span class="section-heading-lower">@item.Baslik</span>
+                    </h2>
+                </div>
+            </div>
+            <img class="product-item-img mx-auto d-flex rounded img-fluid mb-3 mb-lg-0" src="~/Content/img/@item.urunImage" alt="">
+            <div class="product-item-description d-flex  @(tek?" mr-auto":" ml-auto")">
+                <div class="bg-faded p-5 rounded">
+                    @Html.Raw(item.Aciklama)
+                    @Html.ActionLink("Detay", "ProductDetails", new { id = item.Id, title = Seo.AdresDuzenle(item.Baslik) }, new { @class = "btn btn-info" })
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+    tek = !tek;
+}
+

@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="CafeDbModelStoreContainer" CdmEntityContainer="CafeDbEntities">
+    <EntitySetMapping Name="Hakkimizda">
+      <EntityTypeMapping TypeName="CafeDbModel.Hakkimizda">
+        <MappingFragment StoreEntitySet="Hakkimizda">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UstBaslik" ColumnName="UstBaslik" />
+          <ScalarProperty Name="Baslik" ColumnName="Baslik" />
+          <ScalarProperty Name="aboutImage" ColumnName="aboutImage" />
+          <ScalarProperty Name="Aciklama" ColumnName="Aciklama" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Urunler">
+      <EntityTypeMapping TypeName="CafeDbModel.Urunler">
+        <MappingFragment StoreEntitySet="Urunler">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UstBaslik" ColumnName="UstBaslik" />
+          <ScalarProperty Name="Baslik" ColumnName="Baslik" />
+          <ScalarProperty Name="urunImage" ColumnName="urunImage" />
+          <ScalarProperty Name="Aciklama" ColumnName="Aciklama" />
+          <ScalarProperty Name="Aktiflik" ColumnName="Aktiflik" />
+          <ScalarProperty Name="Sira" ColumnName="Sira" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Admin">
+      <EntityTypeMapping TypeName="CafeDbModel.Admin">
+        <MappingFragment StoreEntitySet="Admin">
+          <ScalarProperty Name="role" ColumnName="role" />
+          <ScalarProperty Name="Sifre" ColumnName="Sifre" />
+          <ScalarProperty Name="kullaniciAdi" ColumnName="kullaniciAdi" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
