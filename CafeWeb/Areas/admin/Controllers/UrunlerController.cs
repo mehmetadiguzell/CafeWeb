@@ -65,8 +65,9 @@ namespace CafeWeb.Areas.admin.Controllers
                 else //güncelleme
                 {
                     var guncellenecekVeri = db.Urunler.Find(gelenUrun.Id);
-                    string fotoAdi = Seo.DosyaAdiDuzenle(gelenUrun.urunFile.FileName);
-                    gelenUrun.urunImage = fotoAdi;
+                   
+                        string fotoAdi = Seo.DosyaAdiDuzenle(gelenUrun.urunFile.FileName);
+                        gelenUrun.urunImage = fotoAdi;
                     
                     db.Entry(guncellenecekVeri).CurrentValues.SetValues(gelenUrun);
                     gelenUrun.urunFile.SaveAs(Path.Combine(Server.MapPath("~/Content/img/"), Path.GetFileName(fotoAdi)));

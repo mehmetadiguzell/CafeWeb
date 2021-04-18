@@ -1,6 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\CafeWeb\\Views",
+    "\\CafeWeb\\Views\\Shared"
   ],
+  "SelectedNode": "\\CafeWeb",
   "PreviewInSolutionExplorer": false
 }
