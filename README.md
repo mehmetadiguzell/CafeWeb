@@ -1,2 +1,2 @@
 # CafeWeb
- ASP.NET MVC5
+ ASP.NET MVC5 dinamik web sitesi
