@@ -65,14 +65,18 @@ namespace CafeWeb.Areas.admin.Controllers
                 else //güncelleme
                 {
                     var guncellenecekVeri = db.Urunler.Find(gelenUrun.Id);
-                   
+
+                    if (gelenUrun.urunFile != null)
+                    {
                         string fotoAdi = Seo.DosyaAdiDuzenle(gelenUrun.urunFile.FileName);
                         gelenUrun.urunImage = fotoAdi;
+                        gelenUrun.urunFile.SaveAs(Path.Combine(Server.MapPath("~/Content/img/"), Path.GetFileName(fotoAdi)));
+                    }
                     
                     db.Entry(guncellenecekVeri).CurrentValues.SetValues(gelenUrun);
-                    gelenUrun.urunFile.SaveAs(Path.Combine(Server.MapPath("~/Content/img/"), Path.GetFileName(fotoAdi)));
                     
-                    TempData["Urun"] = "Ürün Güncellendi";
+                    
+                    TempData["Urun"] = " ";
                 }
                 db.SaveChanges();
                 return RedirectToAction("Index");
